@@ -236,8 +236,8 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* ── Replace the alert with: window.open("/resume.pdf", "_blank") ── */}
-        <button className="nav-resume" onClick={() => alert("Link your resume PDF here!")}>
+        {/*  */}
+        <button className="nav-resume" onClick={() => window.open("https://drive.google.com/file/d/1d4JH_zbkTO-4zB7-WaEzrquM3eePYgC3/view?usp=sharing", "_blank")}>
           RESUME
         </button>
       </nav>
@@ -262,7 +262,7 @@ export default function Portfolio() {
             <p className="hero-subtitle">{DATA.subtitle}</p>
             <div className="hero-cta-row">
               <button className="btn-primary"  onClick={() => scrollTo("projects")}>View Projects</button>
-              <a      className="btn-outline"   href={`mailto:${DATA.email}`}>Get In Touch</a>
+              <button className="btn-outline" onClick={() => scrollTo("contact")}> Get In Touch </button>
             </div>
           </div>
 
@@ -534,14 +534,14 @@ export default function Portfolio() {
               <h3>Hello! I'm<br /><em>Jayanti.</em></h3>
               <p>{DATA.about}</p>
               <div style={{ marginTop: 28 }}>
-                {/* Replace alert with: window.open("/resume.pdf", "_blank") */}
-                <button className="btn-primary" onClick={() => alert("Link your resume PDF here!")}>
+                {/*  */}
+                <button className="btn-primary" onClick={() => window.open("https://drive.google.com/file/d/1d4JH_zbkTO-4zB7-WaEzrquM3eePYgC3/view?usp=sharing", "_blank")}>
                   Download Resume
                 </button>
               </div>
             </div>
             <div className="about-info-cards reveal reveal-delay-2">
-              <div className="info-card">
+              <div className="info-card" id="contact">
                 <div className="info-card-label">Contact</div>
                 <div className="info-card-content">
                   <a href={`mailto:${DATA.email}`}>{DATA.email}</a>
