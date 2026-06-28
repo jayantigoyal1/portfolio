@@ -1,19 +1,7 @@
-// ─────────────────────────────────────────────────────────────────
 //  Portfolio.jsx  –  Jayanti Goyal
-//
-//  Setup:
-//    1. npm create vite@latest my-portfolio -- --template react
-//    2. cd my-portfolio && npm install
-//    3. Replace src/App.jsx content with this file
-//    4. Replace src/index.css with the provided index.css
-//    5. In src/main.jsx make sure you have: import './index.css'
-//    6. npm run dev
-// ─────────────────────────────────────────────────────────────────
+
 import { useState, useEffect, useRef } from "react";
 
-/* ─────────────────────────────────────────────
-   DATA  –  edit anything here to update the site
-   ───────────────────────────────────────────── */
 const DATA = {
   name: "Jayanti Goyal",
   title: "Software Developer",
