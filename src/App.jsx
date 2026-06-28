@@ -237,7 +237,7 @@ export default function Portfolio() {
         </div>
 
         {/*  */}
-        <button className="nav-resume" onClick={() => window.open("https://drive.google.com/file/d/1d4JH_zbkTO-4zB7-WaEzrquM3eePYgC3/view?usp=sharing", "_blank")}>
+        <button className="nav-resume" onClick={() => window.open("https://drive.google.com/file/d/1B9KUQtG5apTjOnhaa2zNi3zFDLNqpL5S/view?usp=sharing", "_blank")}>
           RESUME
         </button>
       </nav>
@@ -535,7 +535,7 @@ export default function Portfolio() {
               <p>{DATA.about}</p>
               <div style={{ marginTop: 28 }}>
                 {/*  */}
-                <button className="btn-primary" onClick={() => window.open("https://drive.google.com/file/d/1d4JH_zbkTO-4zB7-WaEzrquM3eePYgC3/view?usp=sharing", "_blank")}>
+                <button className="btn-primary" onClick={() => window.open("https://drive.google.com/file/d/1B9KUQtG5apTjOnhaa2zNi3zFDLNqpL5S/view?usp=sharing", "_blank")}>
                   Download Resume
                 </button>
               </div>
