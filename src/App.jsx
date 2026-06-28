@@ -126,7 +126,7 @@ const DATA = {
       degree: "B.Tech – Computer Science & Engineering",
       period: "2024 – 2028",
       location: "Delhi, India",
-      detail: "CGPA: 8.92",
+      detail: "CGPA: 9.00",
     },
     {
       institution: "St. Columbo Public School",
