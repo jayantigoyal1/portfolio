@@ -91,8 +91,10 @@ const DATA = {
   },
 
   achievements: [
+    { icon: "🏅", text: " Selected for Amazon ML Summer School 2026 by Amazon" },
+    { icon: "🎓", text: "Selected among Top 100 students in India for MSTEM Scholarship 2026 by Marvell Technology" },
     { icon: "💡", text: "600+ problems solved on LeetCode, CodeChef & Codeforces" },
-    { icon: "🎓", text: "Selected for McKinsey Forward Program 2026 by McKinsey & Company." },
+    { icon: "🎓", text: "Completed McKinsey Forward Program 2026 by McKinsey & Company" },
     { icon: "🏆", text: "3rd Place (80+ teams) – Mobile App Dev Hackathon, IGDTUW" },
     { icon: "🥇", text: "Ranked 1st – MERN Stack Cohort, MSC Summer Bootcamp 2025" },
     { icon: "🥇", text: "Ranked 1st – Competitive Programming Cohort, GDG IGDTUW" },
@@ -225,7 +227,7 @@ export default function Portfolio() {
         </div>
 
         {/*  */}
-        <button className="nav-resume" onClick={() => window.open("https://drive.google.com/file/d/1B9KUQtG5apTjOnhaa2zNi3zFDLNqpL5S/view?usp=sharing", "_blank")}>
+        <button className="nav-resume" onClick={() => window.open("https://drive.google.com/file/d/1EfbAmSRfsWCy1id-BJHEIQVfS57XrB_k/view?usp=sharing", "_blank")}>
           RESUME
         </button>
       </nav>
@@ -523,7 +525,7 @@ export default function Portfolio() {
               <p>{DATA.about}</p>
               <div style={{ marginTop: 28 }}>
                 {/*  */}
-                <button className="btn-primary" onClick={() => window.open("https://drive.google.com/file/d/1B9KUQtG5apTjOnhaa2zNi3zFDLNqpL5S/view?usp=sharing", "_blank")}>
+                <button className="btn-primary" onClick={() => window.open("https://drive.google.com/file/d/1EfbAmSRfsWCy1id-BJHEIQVfS57XrB_k/view?usp=sharing", "_blank")}>
                   Download Resume
                 </button>
               </div>
