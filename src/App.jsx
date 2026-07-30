@@ -93,7 +93,9 @@ const DATA = {
   achievements: [
     { icon: "🏅", text: " Selected for Amazon ML Summer School 2026 by Amazon" },
     { icon: "🎓", text: "Selected among Top 100 students in India for MSTEM Scholarship 2026 by Marvell Technology" },
-    { icon: "💡", text: "600+ problems solved on LeetCode, CodeChef & Codeforces" },
+    { icon: "🏆", text: "Flipkart Grid 8.0 Semi Finalist (cleared Round 2)" },
+    { icon: "🏅", text: "Selected for zonals of Woemn Who Master hackathon by Logitech and Aspire for Her" },
+    { icon: "💡", text: "650+ problems solved on LeetCode, CodeChef & Codeforces" },
     { icon: "🎓", text: "Completed McKinsey Forward Program 2026 by McKinsey & Company" },
     { icon: "🏆", text: "3rd Place (80+ teams) – Mobile App Dev Hackathon, IGDTUW" },
     { icon: "🥇", text: "Ranked 1st – MERN Stack Cohort, MSC Summer Bootcamp 2025" },
