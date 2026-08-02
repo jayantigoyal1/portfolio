@@ -1,6 +1,28 @@
 //  Portfolio.jsx  –  Jayanti Goyal
 
 import { useState, useEffect, useRef } from "react";
+import heroImage from "./assets/icon.png";
+import certMLImg from "./assets/machine learning.jpeg";
+import certOracleImg from "./assets/oracle ai cert.jpg";
+import certMstemImg from "./assets/Jayanti Goyal mstem (1).jpg";
+import certForwardImg from "./assets/Forward.jpg";
+import certCS50PImg from "./assets/CS50P cert.png";
+import certIEEEImg from "./assets/iee open source.png";
+import certMSCImg from "./assets/msc certificate.jpg";
+import certGDGCPImg from "./assets/GDG CP.png";
+import certSWOCImg from "./assets/SWOC.png";
+import {
+  FiGithub, FiLinkedin, FiMail, FiDownload, FiExternalLink,
+  FiUser, FiShield, FiCode, FiFolder, FiCpu,
+  FiBriefcase, FiBookOpen, FiAward, FiBarChart2, FiCalendar, FiMapPin,
+  FiChevronLeft, FiChevronRight, FiArrowUpRight, FiZoomIn, FiX,
+} from "react-icons/fi";
+import {
+  SiPython, SiCplusplus, SiJavascript, SiTensorflow, SiKeras, SiPytorch,
+  SiScikitlearn, SiNumpy, SiPandas, SiOpencv, SiReact, SiHtml5,
+  SiTailwindcss, SiVite, SiNodedotjs, SiExpress, SiMongodb, SiGit,
+  SiHuggingface, SiKaggle, SiVercel, SiRender, SiLeetcode,
+} from "react-icons/si";
 
 const DATA = {
   name: "Jayanti Goyal",
@@ -42,7 +64,6 @@ const DATA = {
   projects: [
     {
       name: "DocIntel-AI",
-      emoji: "📝",
       tagline: "AI-powered document intelligence platform for classification, information extraction, and document Q&A",
       tech: ["Python", "PyTorch", "Hugging Face Transformers", "LayoutLMv3", "Tesseract OCR", "Streamlit"],
       desc: "Analyses scanned documents using OCR and multimodal transformers, classifying files across 16 document categories with 78.5% accuracy, extracting key entities via NER, and enabling visual question answering through an end-to-end document understanding workflow.",
@@ -52,7 +73,6 @@ const DATA = {
     },
     {
       name: "TopCorner",
-      emoji: "⚽",
       tagline: "Live football predictions & private leagues",
       tech: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind"],
       desc: "Engineered a full-stack app with 15+ REST endpoints, aggregating live match data across 6 major leagues. Features an automated 3-tier scoring engine with real-time leaderboard updates inside invite-code leagues.",
@@ -62,7 +82,6 @@ const DATA = {
     },
     {
       name: "ASL Translator",
-      emoji: "🤟",
       tagline: "Real-time sign language → 8 languages",
       tech: ["Python", "TensorFlow", "OpenCV", "Scikit-learn", "NumPy"],
       desc: "Deep-learning pipeline trained on 2,600+ gesture samples achieving 85%+ accuracy for 26 ASL alphabets, with multilingual output across eight Indian regional languages.",
@@ -72,7 +91,6 @@ const DATA = {
     },
     {
       name: "EcoVive",
-      emoji: "🌿",
       tagline: "Chrome ext that scores product sustainability",
       tech: ["React", "Flask", "Vite", "Tailwind"],
       desc: "Chrome Extension + Flask backend analysing e-commerce pages with a 40+ signal keyword engine across 13 product categories, matched to 50+ sustainable alternatives ranked by eco-score.",
@@ -91,25 +109,67 @@ const DATA = {
   },
 
   achievements: [
-    { icon: "🏅", text: " Selected for Amazon ML Summer School 2026 by Amazon" },
-    { icon: "🎓", text: "Selected among Top 100 students in India for MSTEM Scholarship 2026 by Marvell Technology" },
-    { icon: "🏆", text: "Flipkart Grid 8.0 Semi Finalist (cleared Round 2)" },
-    { icon: "🏅", text: "Selected for zonals of Woemn Who Master hackathon by Logitech and Aspire for Her" },
-    { icon: "💡", text: "650+ problems solved on LeetCode, CodeChef & Codeforces" },
-    { icon: "🎓", text: "Completed McKinsey Forward Program 2026 by McKinsey & Company" },
-    { icon: "🏆", text: "3rd Place (80+ teams) – Mobile App Dev Hackathon, IGDTUW" },
-    { icon: "🥇", text: "Ranked 1st – MERN Stack Cohort, MSC Summer Bootcamp 2025" },
-    { icon: "🥇", text: "Ranked 1st – Competitive Programming Cohort, GDG IGDTUW" },
-    { icon: "🏅", text: "5th Place (500+ participants) – IEEE Open Source Week 2025" },
-    { icon: "🎓", text: "SheCodes Foundation Scholar 2024" },
-    { icon: "💡", text: "Top 50: AlgoVerse 2025 conducted by HackWithIndia IGDTUW" },
-    { icon: "🥋", text: "2nd Place – Taekwondo (Poomsae), Sangram 2025, IIT Roorkee" },
+    { icon: "🏅", text: " Selected for **Amazon ML Summer School 2026** by Amazon" },
+    { icon: "🎓", text: "Selected among **Top 100 students in India** for MSTEM Scholarship 2026 by Marvell Technology" },
+    { icon: "🏆", text: "Flipkart Grid 8.0 **Semi Finalist**" },
+    { icon: "🏅", text: "Selected for zonals of **Woemn Who Master hackathon** by Logitech and Aspire for Her" },
+    { icon: "💡", text: "**650+ problems solved** on LeetCode, CodeChef & Codeforces" },
+    { icon: "🎓", text: "Completed **McKinsey Forward Program 2026** by McKinsey & Company" },
+    { icon: "🏆", text: "**3rd Place** (80+ teams) – Mobile App Dev Hackathon, IGDTUW" },
+    { icon: "🥇", text: "**Ranked 1st** – MERN Stack Cohort, MSC Summer Bootcamp 2025" },
+    { icon: "🥇", text: "**Ranked 1st** – Competitive Programming Cohort, GDG IGDTUW" },
+    { icon: "🏅", text: "**5th Place** (500+ participants) – IEEE Open Source Week 2025" },
+    { icon: "🎓", text: "**SheCodes Foundation Scholar 2024**" },
+    { icon: "💡", text: "**Top 50**: AlgoVerse 2025 conducted by HackWithIndia IGDTUW" },
+    { icon: "🥋", text: "**2nd Place** – Taekwondo (Poomsae), Sangram 2025, IIT Roorkee" },
   ],
 
   certifications: [
-    "CS50P – Introduction to Programming with Python (Harvard)",
-    "Machine Learning – DeepLearning.AI / Stanford Online / Coursera",
-    "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
+    {
+      title: "Machine Learning Specialization",
+      subtitle: "DeepLearning.AI · Stanford Online · Coursera",
+      image: certMLImg,
+    },
+    {
+      title: "Oracle Cloud Infrastructure AI Foundations",
+      subtitle: "Foundations Associate · Oracle · 2025",
+      image: certOracleImg,
+    },
+    {
+      title: "M-STEM Scholarship",
+      subtitle: "Marvell Scholarship for Technical & Engineering Merit",
+      image: certMstemImg,
+    },
+    {
+      title: "Forward Program",
+      subtitle: "McKinsey.org · Future-of-Work Skills",
+      image: certForwardImg,
+    },
+    {
+      title: "CS50P",
+      subtitle: "Introduction to Programming with Python (Harvard)",
+      image: certCS50PImg,
+    },
+    {
+      title: "IEEE Open Source Week",
+      subtitle: "Runner Up · IEEE Open Source Week 2025",
+      image: certIEEEImg,
+    },
+    {
+      title: "MERN Stack Cohort",
+      subtitle: "Ranked 1st · MSC Summer Bootcamp 2025",
+      image: certMSCImg,
+    },
+    {
+      title: "Competitive Programming Cohort",
+      subtitle: "Ranked 1st · GDG IGDTUW",
+      image: certGDGCPImg,
+    },
+    {
+      title: "Snowscript Winter of Code",
+      subtitle: "Top 20 Performers · GDG IGDTUW",
+      image: certSWOCImg,
+    },
   ],
 
   education: [
@@ -138,6 +198,43 @@ const DATA = {
 };
 
 /* ─────────────────────────────────────────────
+   ICONS FOR TECH TILES  (only real DATA.skills entries)
+   ───────────────────────────────────────────── */
+const ICON_MAP = {
+  "C++":                    { Icon: SiCplusplus,   color: "#00599C" },
+  "Python":                 { Icon: SiPython,      color: "#3776AB" },
+  "JavaScript":             { Icon: SiJavascript,  color: "#D7B900" },
+  "TensorFlow":             { Icon: SiTensorflow,  color: "#FF6F00" },
+  "Keras":                  { Icon: SiKeras,       color: "#D00000" },
+  "PyTorch":                { Icon: SiPytorch,     color: "#EE4C2C" },
+  "Scikit-learn":           { Icon: SiScikitlearn, color: "#F7931E" },
+  "NumPy":                  { Icon: SiNumpy,       color: "#4D77CF" },
+  "Pandas":                 { Icon: SiPandas,      color: "#150458" },
+  "OpenCV":                 { Icon: SiOpencv,      color: "#5C3EE8" },
+  "React":                  { Icon: SiReact,       color: "#149ECA" },
+  "HTML/CSS":               { Icon: SiHtml5,       color: "#E34F26" },
+  "Tailwind CSS":           { Icon: SiTailwindcss, color: "#0EA5B7" },
+  "Vite":                   { Icon: SiVite,        color: "#8B5CF6" },
+  "Node.js":                { Icon: SiNodedotjs,   color: "#3C873A" },
+  "Express.js":             { Icon: SiExpress,     color: "#2D2D2D" },
+  "MongoDB":                { Icon: SiMongodb,     color: "#3FA037" },
+  "Git":                    { Icon: SiGit,         color: "#E44C30" },
+  "Hugging Face Hub":       { Icon: SiHuggingface, color: "#D89400" },
+  "Kaggle (GPU Training)":  { Icon: SiKaggle,      color: "#20BEFF" },
+  "Vercel":                 { Icon: SiVercel,      color: "#2D2D2D" },
+  "Render":                 { Icon: SiRender,      color: "#1C9C7E" },
+};
+
+// Skill groups that need extra width to fit their tiles in one row
+const WIDE_SKILL_GROUPS = ["Machine Learning", "Backend & Databases", "Tools"];
+
+const TECH_PREVIEW = [
+  "Python", "C++", "JavaScript", "React",
+  "Node.js", "Express.js", "MongoDB", "Tailwind CSS",
+  "TensorFlow", "PyTorch", "OpenCV", "Git",
+];
+
+/* ─────────────────────────────────────────────
    SCROLL-REVEAL HOOK
    ───────────────────────────────────────────── */
 function useReveal() {
@@ -153,12 +250,179 @@ function useReveal() {
 }
 
 /* ─────────────────────────────────────────────
+   TECH TILE
+   ───────────────────────────────────────────── */
+function TechTile({ name }) {
+  const entry = ICON_MAP[name];
+  if (!entry) {
+    return <span className="skill-tag">{name}</span>;
+  }
+  const { Icon, color } = entry;
+  return (
+    <div className="tech-tile">
+      <Icon className="tech-tile-icon" style={{ color }} />
+      <span className="tech-tile-label">{name}</span>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   PROJECT THUMBNAIL ART  (hand-drawn, theme-matched per project)
+   ───────────────────────────────────────────── */
+function ProjectArt({ name }) {
+  const stroke = "#2e1e0e";
+  const paper = "#fff8ee";
+  const cream = "#f4e6cd";
+  const accent = "#c67c38";
+
+  switch (name) {
+    case "DocIntel-AI":
+      return (
+        <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="24" y="16" width="42" height="54" rx="4" fill={paper} stroke={stroke} strokeWidth="2" />
+          <rect x="34" y="26" width="42" height="54" rx="4" fill={cream} stroke={stroke} strokeWidth="2" />
+          <line x1="42" y1="38" x2="68" y2="38" stroke={accent} strokeWidth="2.5" strokeLinecap="round" />
+          <line x1="42" y1="46" x2="68" y2="46" stroke={accent} strokeWidth="2.5" strokeLinecap="round" opacity="0.75" />
+          <line x1="42" y1="54" x2="60" y2="54" stroke={accent} strokeWidth="2.5" strokeLinecap="round" opacity="0.55" />
+          <circle cx="70" cy="66" r="12" fill="none" stroke={stroke} strokeWidth="2.5" />
+          <line x1="79" y1="75" x2="86" y2="82" stroke={stroke} strokeWidth="3" strokeLinecap="round" />
+        </svg>
+      );
+    case "TopCorner":
+      return (
+        <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="34" fill={paper} stroke={stroke} strokeWidth="2.5" />
+          <polygon points="50,34 61,42 57,55 43,55 39,42" fill={stroke} />
+          <line x1="50" y1="34" x2="50" y2="20" stroke={stroke} strokeWidth="2" />
+          <circle cx="50" cy="18" r="2.5" fill={stroke} />
+          <line x1="61" y1="42" x2="76" y2="36" stroke={stroke} strokeWidth="2" />
+          <circle cx="78" cy="34" r="2.5" fill={stroke} />
+          <line x1="57" y1="55" x2="66" y2="70" stroke={stroke} strokeWidth="2" />
+          <circle cx="68" cy="73" r="2.5" fill={stroke} />
+          <line x1="43" y1="55" x2="34" y2="70" stroke={stroke} strokeWidth="2" />
+          <circle cx="32" cy="73" r="2.5" fill={stroke} />
+          <line x1="39" y1="42" x2="24" y2="36" stroke={stroke} strokeWidth="2" />
+          <circle cx="22" cy="34" r="2.5" fill={stroke} />
+        </svg>
+      );
+    case "ASL Translator":
+      return (
+        <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="16" y="52" width="18" height="9" rx="4.5" fill={cream} stroke={stroke} strokeWidth="2" transform="rotate(-30 25 56)" />
+          <rect x="33" y="24" width="8" height="30" rx="4" fill={cream} stroke={stroke} strokeWidth="2" />
+          <rect x="44" y="16" width="8" height="38" rx="4" fill={cream} stroke={stroke} strokeWidth="2" />
+          <rect x="55" y="18" width="8" height="36" rx="4" fill={cream} stroke={stroke} strokeWidth="2" />
+          <rect x="66" y="26" width="8" height="28" rx="4" fill={cream} stroke={stroke} strokeWidth="2" />
+          <rect x="30" y="46" width="38" height="34" rx="12" fill={cream} stroke={stroke} strokeWidth="2.3" />
+          <circle cx="80" cy="30" r="11" fill="none" stroke={accent} strokeWidth="2.3" />
+          <path d="M75 30h10M80 25v10" stroke={accent} strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      );
+    case "EcoVive":
+      return (
+        <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="22" y="22" width="46" height="46" rx="8" fill={paper} stroke={stroke} strokeWidth="2.3" />
+          <circle cx="71" cy="45" r="7" fill={paper} stroke={stroke} strokeWidth="2.3" />
+          <path d="M45 30c14 0 24 11 20 27-15 3-27-6-27-20 0-4 3-7 7-7z" fill="#7ab87e" stroke={stroke} strokeWidth="2" />
+          <path d="M45 32c-2 10-2 18 18 24" fill="none" stroke={stroke} strokeWidth="1.4" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   BOLD KEYWORD PARSER  (turns **word** into <strong>)
+   ───────────────────────────────────────────── */
+function boldify(text) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+  );
+}
+
+/* ─────────────────────────────────────────────
+   CERTIFICATIONS
+   ───────────────────────────────────────────── */
+function CertThumb({ cert, onOpen }) {
+  if (!cert.image) {
+    return (
+      <div className="cert-thumb">
+        <FiAward />
+      </div>
+    );
+  }
+  return (
+    <div className="cert-thumb cert-thumb-img" onClick={() => onOpen(cert)} role="button" tabIndex={0}>
+      <img src={cert.image} alt={cert.title} />
+      <span className="cert-zoom-hint"><FiZoomIn /></span>
+    </div>
+  );
+}
+
+function CertCarousel({ certs, onOpen }) {
+  const [index, setIndex] = useState(0);
+  const cert = certs[index];
+
+  return (
+    <div className="cert-carousel">
+      <CertThumb cert={cert} onOpen={onOpen} />
+      <div className="cert-info">
+        <div className="cert-title">{cert.title}</div>
+        {cert.subtitle && <div className="cert-subtitle">{cert.subtitle}</div>}
+      </div>
+      <div className="cert-nav">
+        <button
+          className="cert-nav-btn"
+          aria-label="Previous certification"
+          onClick={() => setIndex((i) => (i - 1 + certs.length) % certs.length)}
+        >
+          <FiChevronLeft />
+        </button>
+        <div className="cert-dots">
+          {certs.map((_, i) => (
+            <span
+              key={i}
+              className={`cert-dot ${i === index ? "active" : ""}`}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </div>
+        <button
+          className="cert-nav-btn"
+          aria-label="Next certification"
+          onClick={() => setIndex((i) => (i + 1) % certs.length)}
+        >
+          <FiChevronRight />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   SECTION HEAD
+   ───────────────────────────────────────────── */
+function SectionHead({ num, title, action }) {
+  return (
+    <div className="section-header reveal">
+      <span className="section-num">{num}</span>
+      <h2 className="section-title">{title}</h2>
+      <div className="section-line" />
+      {action}
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
    MAIN COMPONENT
    ───────────────────────────────────────────── */
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
   const [navScrolled, setNavScrolled]     = useState(false);
+  const [lightboxCert, setLightboxCert]   = useState(null);
   const heroRef = useRef(null);
+  const resumeUrl = "https://drive.google.com/file/d/1vQURsVAd9tj3SJ7SrtCbg9mUf7MWyMkL/view?usp=sharing";
 
   // Nav scroll styling
   useEffect(() => {
@@ -166,6 +430,14 @@ export default function Portfolio() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close cert lightbox on Escape
+  useEffect(() => {
+    if (!lightboxCert) return;
+    const onKey = (e) => { if (e.key === "Escape") setLightboxCert(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxCert]);
 
   // Active section tracking (highlights nav link)
   useEffect(() => {
@@ -228,9 +500,8 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/*  */}
-        <button className="nav-resume" onClick={() => window.open("https://drive.google.com/file/d/1JpYplXXx1B_HGruXHjdXuuRsBMaB_dej/view?usp=sharing", "_blank")}>
-          RESUME
+        <button className="nav-resume" onClick={() => window.open(resumeUrl, "_blank")}>
+          <FiDownload /> RESUME
         </button>
       </nav>
 
@@ -247,260 +518,33 @@ export default function Portfolio() {
 
           {/* Left – text */}
           <div>
-            <p className="hero-eyebrow">✦ Available for opportunities</p>
+            <p className="hero-eyebrow">👋 Hi there! I'm</p>
             <h1 className="hero-name">
               Jayanti<br /><em>Goyal</em>
             </h1>
             <p className="hero-subtitle">{DATA.subtitle}</p>
+            <p className="hero-desc">{DATA.about}</p>
             <div className="hero-cta-row">
-              <button className="btn-primary"  onClick={() => scrollTo("projects")}>View Projects</button>
-              <button className="btn-outline" onClick={() => scrollTo("contact")}> Get In Touch </button>
+              <button className="btn-primary"  onClick={() => scrollTo("projects")}>View My Work →</button>
+              <button className="btn-outline" onClick={() => scrollTo("contact")}><FiMail /> Get In Touch</button>
+            </div>
+            <div className="social-icon-row">
+              <a className="social-icon-btn" href={DATA.github}   target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
+              <a className="social-icon-btn" href={DATA.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
+              <a className="social-icon-btn" href={DATA.leetcode} target="_blank" rel="noreferrer" aria-label="LeetCode"><SiLeetcode /></a>
+              <a className="social-icon-btn" href={DATA.codolio}  target="_blank" rel="noreferrer" aria-label="Codolio stats"><FiBarChart2 /></a>
+              <a className="social-icon-btn" href={`mailto:${DATA.email}`} aria-label="Email"><FiMail /></a>
             </div>
           </div>
 
-          {/* Right – animated room illustration */}
-          <div className="hero-scene">
-            <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <radialGradient id="roomGlow"   cx="55%" cy="45%" r="50%">
-                  <stop offset="0%"   stopColor="#f5d49a" stopOpacity="0.55"/>
-                  <stop offset="100%" stopColor="#e9d5bb" stopOpacity="0"/>
-                </radialGradient>
-                <radialGradient id="lampGlow"   cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stopColor="#fce8b0" stopOpacity="0.9"/>
-                  <stop offset="60%"  stopColor="#f5c97a" stopOpacity="0.35"/>
-                  <stop offset="100%" stopColor="#e8a96a" stopOpacity="0"/>
-                </radialGradient>
-                <radialGradient id="screenGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stopColor="#a8d4f5" stopOpacity="0.55"/>
-                  <stop offset="100%" stopColor="#7bb8e8" stopOpacity="0"/>
-                </radialGradient>
-                <filter id="softBlur"><feGaussianBlur stdDeviation="2.5"/></filter>
-
-                <linearGradient id="wallGrad"   x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%"   stopColor="#ecdcc8"/>
-                  <stop offset="100%" stopColor="#e0c9ae"/>
-                </linearGradient>
-                <linearGradient id="deskGrad"   x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="#c8956a"/>
-                  <stop offset="100%" stopColor="#a0714a"/>
-                </linearGradient>
-                <linearGradient id="laptopBody" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="#d8c4a8"/>
-                  <stop offset="100%" stopColor="#c4a882"/>
-                </linearGradient>
-                <linearGradient id="laptopLid"  x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="#cdb898"/>
-                  <stop offset="100%" stopColor="#b89d7a"/>
-                </linearGradient>
-                <linearGradient id="cupGrad"    x1="0" y1="0" x2="0.5" y2="1">
-                  <stop offset="0%"   stopColor="#8b5e38"/>
-                  <stop offset="100%" stopColor="#6b3f20"/>
-                </linearGradient>
-                <linearGradient id="bookGrad1"  x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%"   stopColor="#c9735a"/>
-                  <stop offset="100%" stopColor="#a85845"/>
-                </linearGradient>
-                <linearGradient id="bookGrad2"  x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%"   stopColor="#7a9e7e"/>
-                  <stop offset="100%" stopColor="#5f8463"/>
-                </linearGradient>
-                <linearGradient id="bookGrad3"  x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%"   stopColor="#e8c85a"/>
-                  <stop offset="100%" stopColor="#c9a93e"/>
-                </linearGradient>
-                <linearGradient id="plantPot"   x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="#b07850"/>
-                  <stop offset="100%" stopColor="#8a5a35"/>
-                </linearGradient>
-                <linearGradient id="shelfGrad"  x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="#c09070"/>
-                  <stop offset="100%" stopColor="#a07050"/>
-                </linearGradient>
-              </defs>
-
-              {/* Room bg */}
-              <rect width="520" height="460" fill="url(#wallGrad)" rx="20"/>
-              <ellipse cx="390" cy="90" rx="180" ry="140" fill="url(#roomGlow)" className="scene-glow"/>
-              <rect x="30" y="30" width="460" height="290" rx="14" fill="none" stroke="#d4b898" strokeWidth="1.5" opacity="0.5"/>
-
-              {/* Shelf */}
-              <rect x="280" y="70" width="180" height="10" rx="4" fill="url(#shelfGrad)"/>
-              <rect x="286" y="78" width="168" height="4"  fill="#8a6040" opacity="0.3"/>
-              <path d="M292 80 L292 100 Q292 104 296 104 L300 104" stroke="#a07050" strokeWidth="2" fill="none"/>
-              <path d="M448 80 L448 100 Q448 104 444 104 L440 104" stroke="#a07050" strokeWidth="2" fill="none"/>
-
-              {/* Succulent */}
-              <ellipse cx="310" cy="68" rx="12" ry="4" fill="#7aab7e" opacity="0.8"/>
-              <path d="M305 68 Q308 50 310 45 Q312 50 315 68" fill="#5a8f5e" opacity="0.9"/>
-              <path d="M302 66 Q308 55 310 52 Q305 58 302 66" fill="#7aab7e" opacity="0.7"/>
-              <path d="M318 66 Q312 55 310 52 Q315 58 318 66" fill="#7aab7e" opacity="0.7"/>
-              <rect x="302" y="67" width="16" height="12" rx="3" fill="url(#plantPot)"/>
-              <ellipse cx="310" cy="67" rx="8" ry="2.5" fill="#9a6848"/>
-
-              {/* Globe */}
-              <circle cx="350" cy="62" r="14" fill="#c4d8e8" opacity="0.4"/>
-              <circle cx="350" cy="62" r="14" fill="none" stroke="#a08060" strokeWidth="1.5" opacity="0.5"/>
-              <ellipse cx="350" cy="62" rx="14" ry="4" fill="none" stroke="#a08060" strokeWidth="1" opacity="0.35"/>
-              <line x1="350" y1="48" x2="350" y2="76" stroke="#a08060" strokeWidth="1" opacity="0.35"/>
-              <rect x="344" y="75" width="12" height="4" rx="2" fill="#9a7050"/>
-
-              {/* Photo frame */}
-              <rect x="380" y="45" width="36" height="28" rx="3" fill="#e8d5be" stroke="#c4a07a" strokeWidth="2"/>
-              <rect x="384" y="49" width="28" height="20" rx="2" fill="#d4c0a0" opacity="0.6"/>
-              <polygon points="384,69 396,55 408,69" fill="#c09070" opacity="0.5"/>
-              <polygon points="394,69 402,60 412,69" fill="#a07050" opacity="0.4"/>
-
-              {/* String lights */}
-              <path d="M60 30 Q120 50 180 38 Q250 24 320 42 Q380 56 460 35" fill="none" stroke="#c8a060" strokeWidth="1.2" opacity="0.45"/>
-              {[80, 150, 220, 300, 380, 440].map((x, i) => (
-                <g key={i}>
-                  <line x1={x} y1={i%2===0?38:44} x2={x} y2={i%2===0?52:58} stroke="#c8a060" strokeWidth="0.8" opacity="0.5"/>
-                  <ellipse cx={x} cy={i%2===0?55:61} rx="4" ry="5" fill="#f5e090" opacity="0.75"/>
-                  <ellipse cx={x} cy={i%2===0?55:61} rx="8" ry="8" fill="#fce89a" opacity="0.18" filter="url(#softBlur)"/>
-                </g>
-              ))}
-
-              {/* Desk */}
-              <rect x="40"  y="310" width="440" height="18" rx="5" fill="url(#deskGrad)"/>
-              <rect x="40"  y="326" width="440" height="5"  fill="#8a5a35" opacity="0.35"/>
-              <rect x="60"  y="328" width="14"  height="90" rx="4" fill="#a07040"/>
-              <rect x="446" y="328" width="14"  height="90" rx="4" fill="#a07040"/>
-
-              {/* Stacked books */}
-              <g transform="translate(65,278)">
-                <rect x="0" y="22" width="58" height="12" rx="2" fill="url(#bookGrad3)"/>
-                <rect x="0" y="22" width="6"  height="12" rx="1" fill="#b8902e"/>
-                <text x="10" y="31" fontSize="5" fill="#fff8e0" opacity="0.7" fontFamily="serif">PYTHON</text>
-                <rect x="2" y="11" width="54" height="12" rx="2" fill="url(#bookGrad2)"/>
-                <rect x="2" y="11" width="6"  height="12" rx="1" fill="#4a7050"/>
-                <text x="12" y="20" fontSize="5" fill="#f0fff0" opacity="0.7" fontFamily="serif">DESIGN</text>
-                <rect x="4" y="0"  width="50" height="12" rx="2" fill="url(#bookGrad1)"/>
-                <rect x="4" y="0"  width="6"  height="12" rx="1" fill="#884533"/>
-                <text x="14" y="9"  fontSize="5" fill="#fff0ee" opacity="0.7" fontFamily="serif">ALGO</text>
-              </g>
-
-              {/* Laptop */}
-              <g transform="translate(155,175)">
-                <g className="scene-laptop">
-                  <ellipse cx="95" cy="85" rx="80" ry="55" fill="url(#screenGlow)" filter="url(#softBlur)" className="scene-glow"/>
-                  <rect x="20" y="10"  width="150" height="100" rx="8" fill="url(#laptopLid)"/>
-                  <rect x="26" y="16"  width="138" height="88"  rx="6" fill="#2a1e12"/>
-                  <rect x="29" y="19"  width="132" height="82"  rx="5" fill="#1a2535" className="scene-screen"/>
-                  {[0,1,2,3,4,5,6].map(i => (
-                    <rect key={i}
-                      x={35 + (i%3)*2} y={27 + i*10}
-                      width={20 + (i*13)%55} height="3.5" rx="1.5"
-                      fill={i%3===0 ? "#7dd3b0" : i%3===1 ? "#f0a060" : "#a0c8f0"}
-                      opacity="0.75"
-                    />
-                  ))}
-                  <rect x="90" y="87" width="2" height="8" rx="1" fill="#7dd3b0" opacity="0.9">
-                    <animate attributeName="opacity" values="0.9;0;0.9" dur="1.2s" repeatCount="indefinite"/>
-                  </rect>
-                  <circle cx="95" cy="19" r="2" fill="#3a3028"/>
-                  <rect x="18"  y="108" width="154" height="6"  rx="2" fill="#b8a080"/>
-                  <rect x="10"  y="113" width="170" height="20" rx="5" fill="url(#laptopBody)"/>
-                  {[0,1,2].map(row =>
-                    Array.from({ length: 10 - row }).map((_, col) => (
-                      <rect key={`k${row}-${col}`}
-                        x={22 + col*14 + row*7} y={116 + row*5}
-                        width="11" height="3.5" rx="1"
-                        fill="#d0b890" opacity="0.6"
-                      />
-                    ))
-                  )}
-                </g>
-              </g>
-
-              {/* Coffee cup */}
-              <g transform="translate(355,250)">
-                <g className="scene-cup">
-                  <path className="scene-steam-1" d="M15 18 Q12 10 15 4 Q18 -2 15 -8"  fill="none" stroke="#d4a060" strokeWidth="1.8" strokeLinecap="round" opacity="0"/>
-                  <path className="scene-steam-2" d="M25 20 Q28 11 25 4 Q22 -3 25 -10" fill="none" stroke="#d4a060" strokeWidth="1.8" strokeLinecap="round" opacity="0"/>
-                  <path className="scene-steam-3" d="M35 18 Q32 9 35 3 Q38 -3 35 -9"   fill="none" stroke="#d4a060" strokeWidth="1.8" strokeLinecap="round" opacity="0"/>
-                  <ellipse cx="25" cy="62" rx="32" ry="7" fill="#9a7050" opacity="0.7"/>
-                  <ellipse cx="25" cy="60" rx="30" ry="6" fill="#b08560"/>
-                  <path d="M5 28 Q3 60 25 62 Q47 60 45 28 Z" fill="url(#cupGrad)"/>
-                  <ellipse cx="25" cy="28" rx="20" ry="5"  fill="#9a6848"/>
-                  <ellipse cx="25" cy="29" rx="17" ry="4"  fill="#4a2c10"/>
-                  <path d="M18 28 Q25 24 32 28 Q29 31 25 30 Q21 31 18 28" fill="none" stroke="#c49060" strokeWidth="1.2" opacity="0.6"/>
-                  <path d="M44 35 Q58 35 58 46 Q58 57 44 55" fill="none" stroke="#7a4a28" strokeWidth="4" strokeLinecap="round"/>
-                </g>
-              </g>
-
-              {/* Desk plant */}
-              <g transform="translate(430,248)">
-                <path d="M20 32 Q8 18 14 5 Q22 18 20 32"  fill="#6a9e6e" opacity="0.85"/>
-                <path d="M20 32 Q32 18 26 5 Q18 18 20 32" fill="#5a8f5e" opacity="0.85"/>
-                <path d="M20 32 Q6 24 10 12"              fill="#7ab87e" opacity="0.6"/>
-                <path d="M20 32 Q34 24 30 12"             fill="#7ab87e" opacity="0.6"/>
-                <line x1="20" y1="32" x2="20" y2="40" stroke="#6a7a4e" strokeWidth="2"/>
-                <path d="M10 40 Q10 58 20 60 Q30 58 30 40 Z" fill="url(#plantPot)"/>
-                <ellipse cx="20" cy="40" rx="10" ry="3"   fill="#c09070"/>
-                <ellipse cx="20" cy="40" rx="8"  ry="2.5" fill="#5a3a1a"/>
-              </g>
-
-              {/* Pencil holder */}
-              <g transform="translate(415,268)">
-                <rect x="0" y="0" width="22" height="30" rx="4" fill="#b08560"/>
-                <rect x="0" y="0" width="22" height="6"  rx="3" fill="#c09870"/>
-                <rect x="4"  y="-18" width="3.5" height="22" rx="1" fill="#f0c040"/>
-                <polygon points="4,-18 7.5,-18 5.75,-26" fill="#e8b838"/>
-                <rect x="4"  y="-18" width="3.5" height="3" fill="#f0a0a0"/>
-                <rect x="10" y="-14" width="3.5" height="18" rx="1" fill="#a0c8f0"/>
-                <polygon points="10,-14 13.5,-14 11.75,-22" fill="#88b8e0"/>
-                <rect x="10" y="-14" width="3.5" height="3" fill="#f0d0a0"/>
-                <rect x="16" y="-10" width="3"   height="14" rx="1" fill="#c0c0c0"/>
-                <polygon points="16,-10 19,-10 17.5,-17" fill="#a8a8a8"/>
-              </g>
-
-              {/* Notebook */}
-              <g transform="translate(70,295)">
-                <rect x="0" y="0" width="70" height="18" rx="3" fill="#e8d4b8"/>
-                <rect x="0" y="0" width="8"  height="18" rx="2" fill="#c4a078"/>
-                {[4,8,12].map(y => <line key={y} x1="12" y1={y} x2="66" y2={y} stroke="#c4a878" strokeWidth="0.8" opacity="0.5"/>)}
-                {[10,20,30,40,50,60].map(x => (
-                  <circle key={x} cx={x} cy={-2} r="2.5" fill="none" stroke="#9a7850" strokeWidth="1.2" opacity="0.6"/>
-                ))}
-              </g>
-
-              {/* Desk lamp */}
-              <g transform="translate(465,90)">
-                <ellipse cx="10" cy="95" rx="55" ry="45" fill="url(#lampGlow)" filter="url(#softBlur)" className="scene-glow"/>
-                <ellipse cx="10" cy="218" rx="18" ry="5" fill="#9a7050"/>
-                <rect x="5" y="165" width="10" height="55" rx="4" fill="#b08060"/>
-                <path d="M10 165 Q-15 130 -5 95" fill="none" stroke="#b08060" strokeWidth="7" strokeLinecap="round"/>
-                <path d="M-28 82 Q-5 60 18 82 L12 100 Q-5 108 -22 100 Z" fill="#c8a060"/>
-                <path d="M-28 82 Q-5 60 18 82" fill="none" stroke="#e0b870" strokeWidth="2"/>
-                <ellipse cx="-5" cy="92" rx="10" ry="10" fill="#fce890" opacity="0.9"/>
-                <ellipse cx="-5" cy="92" rx="22" ry="22" fill="#fce890" opacity="0.3" filter="url(#softBlur)"/>
-              </g>
-
-              {/* Keyboard */}
-              <g transform="translate(195,302)" opacity="0.7">
-                <rect x="0" y="0" width="130" height="12" rx="3" fill="#d0bea0"/>
-                {[0,1,2].map(row =>
-                  Array.from({ length: 12 - row }).map((_, col) => (
-                    <rect key={`kb${row}-${col}`}
-                      x={4 + col*10 + row*5} y={1 + row*4}
-                      width="8" height="3" rx="1"
-                      fill="#c4ac88" opacity="0.8"
-                    />
-                  ))
-                )}
-              </g>
-
-              {/* Mouse */}
-              <g transform="translate(336,301)">
-                <rect x="0" y="0" width="20" height="30" rx="10" fill="#c8b090"/>
-                <line x1="10" y1="0"  x2="10" y2="14" stroke="#a89070" strokeWidth="1.2"/>
-                <circle cx="10" cy="18" r="2" fill="#a89070" opacity="0.6"/>
-              </g>
-
-              {/* Floor shadow */}
-              <ellipse cx="260" cy="418" rx="220" ry="14" fill="#a07840" opacity="0.10"/>
-            </svg>
+          {/* Right – image card */}
+          <div className="hero-right">
+            <div className="hero-image-card">
+              <div className="hero-chip-badge"><FiCpu /></div>
+              <div className="hero-scene">
+                <img src={heroImage} alt="Illustration of Jayanti Goyal coding" />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -512,32 +556,59 @@ export default function Portfolio() {
       </section>
 
       {/* ════════════════════════════════════════
-          ABOUT  (01)
+          ABOUT  (01) — bento row
           ════════════════════════════════════════ */}
-      <section id="about" style={{ background: BG_DARK, maxWidth: "none", padding: "96px 0" }}>
+      <section id="about" style={{ background: BG_DARK, maxWidth: "none", padding: "64px 0" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
-          <div className="section-header reveal">
-            <span className="section-num">01</span>
-            <h2 className="section-title">About</h2>
-            <div className="section-line" />
-          </div>
-          <div className="about-grid">
-            <div className="about-text-block reveal">
-              <h3>Hello! I'm<br /><em>Jayanti.</em></h3>
-              <p>{DATA.about}</p>
-              <div style={{ marginTop: 28 }}>
-                {/*  */}
-                <button className="btn-primary" onClick={() => window.open("https://drive.google.com/file/d/1JpYplXXx1B_HGruXHjdXuuRsBMaB_dej/view?usp=sharing", "_blank")}>
-                  Download Resume
-                </button>
+          <SectionHead num="01" title="About" />
+
+          <div className="bento-row">
+            <div className="bento-card reveal">
+              <div className="bento-card-head"><FiUser /><h3>About Me</h3></div>
+              <p className="bento-card-text">{DATA.about}</p>
+              <button className="btn-outline btn-sm" onClick={() => scrollTo("about-details")}>
+                More About Me <FiArrowUpRight />
+              </button>
+            </div>
+
+            <div className="bento-card reveal reveal-delay-1">
+              <div className="bento-card-head-row">
+                <div className="bento-card-head"><FiShield /><h3>Certifications</h3></div>
+                <button className="bento-head-link" onClick={() => scrollTo("certifications")}>View All <FiArrowUpRight /></button>
+              </div>
+              <CertCarousel certs={DATA.certifications.slice(0, 4)} onOpen={setLightboxCert} />
+            </div>
+
+            <div className="bento-card reveal reveal-delay-2">
+              <div className="bento-card-head-row">
+                <div className="bento-card-head"><FiCode /><h3>Tech Stack</h3></div>
+                <button className="bento-head-link" onClick={() => scrollTo("skills")}>View All <FiArrowUpRight /></button>
+              </div>
+              <div className="tech-tile-grid">
+                {TECH_PREVIEW.map((name) => <TechTile key={name} name={name} />)}
               </div>
             </div>
-            <div className="about-info-cards reveal reveal-delay-2">
-              <div className="info-card" id="contact">
-                <div className="info-card-label">Contact</div>
-                <div className="info-card-content">
-                  <a href={`mailto:${DATA.email}`}>{DATA.email}</a>
-                </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          ABOUT — full details ("More About Me" target)
+          ════════════════════════════════════════ */}
+      <section id="about-details" style={{ background: BG_DARK, maxWidth: "none", padding: "64px 0" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
+          <div className="about-details-grid">
+            <div className="about-intro reveal">
+              <h3>Hello! I'm<br /><em>Jayanti.</em></h3>
+              <p>{DATA.about}</p>
+              <button className="btn-primary" onClick={() => window.open(resumeUrl, "_blank")}>
+                <FiDownload /> Download Resume
+              </button>
+            </div>
+            <div className="about-info-stack reveal reveal-delay-1">
+              <div className="bento-card" id="contact">
+                <div className="bento-card-head"><FiMail /><h3>Contact</h3></div>
+                <a className="bento-card-text bento-email" href={`mailto:${DATA.email}`}>{DATA.email}</a>
                 <div className="social-row">
                   <a className="social-btn" href={DATA.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
                   <a className="social-btn" href={DATA.github}   target="_blank" rel="noreferrer">GitHub</a>
@@ -547,17 +618,11 @@ export default function Portfolio() {
                   <a className="social-btn" href={DATA.codolio}  target="_blank" rel="noreferrer">Codolio</a>
                 </div>
               </div>
-              <div className="info-card">
-                <div className="info-card-label">Certifications</div>
-                <div className="cert-list">
-                  {DATA.certifications.map((c, i) => <div key={i} className="cert-item">{c}</div>)}
-                </div>
-              </div>
-              <div className="info-card">
-                <div className="info-card-label">Beyond Code</div>
-                <div className="info-card-content">
+              <div className="bento-card">
+                <div className="bento-card-head"><FiAward /><h3>Beyond Code</h3></div>
+                <p className="bento-card-text">
                   Taekwondo Athlete | General Secretary at AVIRA (Martial Arts Society, IGDTUW) | Competitive Programmer
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -567,27 +632,21 @@ export default function Portfolio() {
       {/* ════════════════════════════════════════
           EXPERIENCE  (02)
           ════════════════════════════════════════ */}
-      <section id="experience" style={{ background: `linear-gradient(180deg, ${BG} 0%, ${BG_DARK} 100%)`, maxWidth: "none", padding: "96px 0" }}>
+      <section id="experience" style={{ background: `linear-gradient(180deg, ${BG} 0%, ${BG_DARK} 100%)`, maxWidth: "none", padding: "64px 0" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
-          <div className="section-header reveal">
-            <span className="section-num">02</span>
-            <h2 className="section-title">Experience</h2>
-            <div className="section-line" />
-          </div>
-          <div className="exp-timeline">
+          <SectionHead num="02" title="Experience" />
+          <div className="entry-list">
             {DATA.experience.map((e, i) => (
-              <div key={i} className={`exp-item reveal reveal-delay-${i + 1}`}>
-                <div>
-                  <div className="exp-period">{e.period}</div>
-                  <div className="exp-location">{e.location}</div>
+              <div key={i} className={`entry-card reveal reveal-delay-${i + 1}`}>
+                <div className="entry-card-meta">
+                  <span className="entry-pill"><FiCalendar /> {e.period}</span>
+                  <span className="entry-pill"><FiMapPin /> {e.location}</span>
                 </div>
-                <div>
-                  <div className="exp-role">{e.role}</div>
-                  <div className="exp-company">{e.company}</div>
-                  <ul className="exp-bullets">
-                    {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                  </ul>
-                </div>
+                <div className="entry-role">{e.role}</div>
+                <div className="entry-org"><FiBriefcase /> {e.company}</div>
+                <ul className="exp-bullets">
+                  {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
               </div>
             ))}
           </div>
@@ -597,27 +656,21 @@ export default function Portfolio() {
       {/* ════════════════════════════════════════
           EDUCATION  (03)
           ════════════════════════════════════════ */}
-      <section id="education" style={{ background: BG_DARK, maxWidth: "none", padding: "96px 0" }}>
+      <section id="education" style={{ background: BG_DARK, maxWidth: "none", padding: "64px 0" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
-          <div className="section-header reveal">
-            <span className="section-num">03</span>
-            <h2 className="section-title">Education</h2>
-            <div className="section-line" />
-          </div>
-          <div className="exp-timeline">
+          <SectionHead num="03" title="Education" />
+          <div className="entry-list-grid">
             {DATA.education.map((ed, i) => (
-              <div key={i} className={`exp-item reveal reveal-delay-${i + 1}`}>
-                <div>
-                  <div className="exp-period">{ed.period}</div>
-                  <div className="exp-location">{ed.location}</div>
+              <div key={i} className={`entry-card reveal reveal-delay-${i + 1}`}>
+                <div className="entry-card-meta">
+                  <span className="entry-pill"><FiCalendar /> {ed.period}</span>
+                  <span className="entry-pill"><FiMapPin /> {ed.location}</span>
                 </div>
-                <div>
-                  <div className="exp-role">{ed.degree}</div>
-                  <div className="exp-company">{ed.institution}</div>
-                  <ul className="exp-bullets">
-                    <li>{ed.detail}</li>
-                  </ul>
-                </div>
+                <div className="entry-role">{ed.degree}</div>
+                <div className="entry-org"><FiBookOpen /> {ed.institution}</div>
+                <ul className="exp-bullets">
+                  <li>{ed.detail}</li>
+                </ul>
               </div>
             ))}
           </div>
@@ -628,39 +681,40 @@ export default function Portfolio() {
           PROJECTS  (04)
           ════════════════════════════════════════ */}
       <section id="projects">
-        <div className="section-header reveal">
-          <span className="section-num">04</span>
-          <h2 className="section-title">Selected Projects</h2>
-          <div className="section-line" />
-        </div>
+        <SectionHead
+          num="04"
+          title="Featured Projects"
+          action={
+            <a className="bento-head-link section-head-link" href={DATA.github} target="_blank" rel="noreferrer">
+              View All Projects <FiArrowUpRight />
+            </a>
+          }
+        />
         <div className="projects-grid">
           {DATA.projects.map((p, i) => (
             <div key={p.name} className={`project-card reveal reveal-delay-${i + 1}`}>
-              <span className="project-emoji">{p.emoji}</span>
-              <div className="project-name">{p.name}</div>
-              <div className="project-tagline">{p.tagline}</div>
-              <p className="project-desc">{p.desc}</p>
-              <div className="project-tech">
-                {p.tech.map((t) => <span key={t} className="tech-pill">{t}</span>)}
-              </div>
-              <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 16 }}>
-                {p.tags.map((t) => (
-                  <span
-                    key={t}
-                    style={{
-                      fontSize: 10,
-                      letterSpacing: "0.10em",
-                      color: "#b09070",
-                      textTransform: "uppercase"
-                    }}
+              <div className="project-thumb">
+                <ProjectArt name={p.name} />
+                {(p.demo || p.repo) && (
+                  <a
+                    className="project-thumb-link"
+                    href={p.demo || p.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${p.name}`}
                   >
-                    {t}
-                  </span>
-                ))}
+                    <FiExternalLink />
+                  </a>
+                )}
+              </div>
+              <div className="project-name">{p.name}</div>
+              <p className="project-tagline">{p.tagline}</p>
+              <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "14px 0" }}>
+                {p.tags.map((t) => <span key={t} className="tech-pill">{t}</span>)}
               </div>
               <div className="project-links">
-                {p.repo && <a className="project-link" href={p.repo} target="_blank" rel="noreferrer">↗ GitHub</a>}
-                {p.demo && <a className="project-link" href={p.demo} target="_blank" rel="noreferrer">↗ Live Demo</a>}
+                {p.repo && <a className="project-link" href={p.repo} target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>}
+                {p.demo && <a className="project-link" href={p.demo} target="_blank" rel="noreferrer"><FiExternalLink /> Live Demo</a>}
               </div>
             </div>
           ))}
@@ -670,22 +724,29 @@ export default function Portfolio() {
       {/* ════════════════════════════════════════
           SKILLS  (05)
           ════════════════════════════════════════ */}
-      <section id="skills" style={{ background: BG_DARK, maxWidth: "none", padding: "96px 0" }}>
+      <section id="skills" style={{ background: BG_DARK, maxWidth: "none", padding: "64px 0" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
-          <div className="section-header reveal">
-            <span className="section-num">05</span>
-            <h2 className="section-title">Skills & Stack</h2>
-            <div className="section-line" />
-          </div>
-          <div className="skills-grid">
-            {Object.entries(DATA.skills).map(([group, items], i) => (
-              <div key={group} className={`skill-group reveal reveal-delay-${(i % 4) + 1}`}>
-                <div className="skill-group-name">{group}</div>
-                <div className="skill-tags">
-                  {items.map((s) => <span key={s} className="skill-tag">{s}</span>)}
+          <SectionHead num="05" title="Skills & Stack" />
+          <div className="skills-grid-v2">
+            {Object.entries(DATA.skills).map(([group, items], i) => {
+              const iconItems = items.filter((s) => ICON_MAP[s]);
+              const tagItems = items.filter((s) => !ICON_MAP[s]);
+              return (
+                <div key={group} className={`bento-card reveal reveal-delay-${(i % 4) + 1}${WIDE_SKILL_GROUPS.includes(group) ? " skills-card-wide" : ""}`}>
+                  <div className="bento-card-head"><FiCode /><h3>{group}</h3></div>
+                  {iconItems.length > 0 && (
+                    <div className="tech-tile-grid">
+                      {iconItems.map((s) => <TechTile key={s} name={s} />)}
+                    </div>
+                  )}
+                  {tagItems.length > 0 && (
+                    <div className="skill-tag-row">
+                      {tagItems.map((s) => <span key={s} className="skill-tag">{s}</span>)}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -693,18 +754,32 @@ export default function Portfolio() {
       {/* ════════════════════════════════════════
           ACHIEVEMENTS  (06)
           ════════════════════════════════════════ */}
-      <section id="achievements" style={{ maxWidth: "none", padding: "96px 0" }}>
+      <section id="achievements" style={{ maxWidth: "none", padding: "64px 0" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
-          <div className="section-header reveal">
-            <span className="section-num">06</span>
-            <h2 className="section-title">Achievements</h2>
-            <div className="section-line" />
-          </div>
+          <SectionHead num="06" title="Achievements" />
           <div className="ach-grid">
             {DATA.achievements.map((a, i) => (
               <div key={i} className={`ach-card reveal reveal-delay-${(i % 4) + 1}`}>
-                <span className="ach-icon">{a.icon}</span>
-                <span className="ach-text">{a.text}</span>
+                <span className="ach-icon-circle">{a.icon}</span>
+                <span className="ach-text">{boldify(a.text)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          CERTIFICATIONS  (07) — "View All" target
+          ════════════════════════════════════════ */}
+      <section id="certifications" style={{ background: BG_DARK, maxWidth: "none", padding: "64px 0" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 40px" }}>
+          <SectionHead num="07" title="Certifications" />
+          <div className="cert-grid">
+            {DATA.certifications.map((c, i) => (
+              <div key={i} className={`cert-card reveal reveal-delay-${(i % 4) + 1}`}>
+                <CertThumb cert={c} onOpen={setLightboxCert} />
+                <div className="cert-title">{c.title}</div>
+                {c.subtitle && <div className="cert-subtitle">{c.subtitle}</div>}
               </div>
             ))}
           </div>
@@ -716,7 +791,23 @@ export default function Portfolio() {
           ════════════════════════════════════════ */}
       <div className="footer">
         <div className="footer-left">Jayanti Goyal · {new Date().getFullYear()}</div>
+        <div className="footer-right">Built with React</div>
       </div>
+
+      {/* ════════════════════════════════════════
+          CERTIFICATE LIGHTBOX
+          ════════════════════════════════════════ */}
+      {lightboxCert && (
+        <div className="lightbox-overlay" onClick={() => setLightboxCert(null)}>
+          <button className="lightbox-close" aria-label="Close" onClick={() => setLightboxCert(null)}>
+            <FiX />
+          </button>
+          <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
+            <img src={lightboxCert.image} alt={lightboxCert.title} />
+            <figcaption>{lightboxCert.title}</figcaption>
+          </figure>
+        </div>
+      )}
 
     </div>
   );
