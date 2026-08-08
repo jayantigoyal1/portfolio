@@ -69,12 +69,15 @@ body {
   padding: 6px 16px;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
   gap: 6px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -87,6 +90,7 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   border: 1.5px solid transparent;
+  text-decoration: none;
 }
 
 .nav-link:hover  { background: var(--accent-bg); color: var(--accent); }
@@ -106,9 +110,63 @@ body {
   align-items: center;
   gap: 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  flex-shrink: 0;
 }
 
 .nav-resume:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+/* ────────────────────────────────────────────
+   NAV — mobile hamburger + dropdown panel
+   ──────────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-solid);
+  border: 1.5px solid var(--border);
+  color: var(--dark);
+  font-size: 19px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-mobile-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--card-solid);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.nav-mobile-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  padding: 14px 16px;
+  border-radius: 14px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-mobile-link:hover,
+.nav-mobile-link.active { background: var(--accent-bg); color: var(--accent); }
+
+.nav-mobile-resume {
+  justify-content: center;
+  margin-top: 8px;
+  width: 100%;
+}
 
 /* ────────────────────────────────────────────
    SECTIONS (shared)
@@ -375,6 +433,24 @@ section {
 .section-head-link {
   align-self: center;
 }
+
+.page-header {
+  margin-bottom: 8px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--light);
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent); }
 
 /* ────────────────────────────────────────────
    BENTO CARDS (About / Certifications / Tech Stack / Contact / Skills)
@@ -948,11 +1024,11 @@ section {
 .ach-card {
   background: var(--card-solid);
   border: 1.5px solid var(--border);
-  border-radius: 16px;
-  padding: 14px 18px;
+  border-radius: 18px;
+  padding: 16px 20px;
   box-shadow: var(--shadow-card);
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: center;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -963,15 +1039,64 @@ section {
 }
 
 .ach-icon-circle {
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: var(--accent-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 19px;
+  font-size: 28px;
   flex-shrink: 0;
+}
+
+/* ────────────────────────────────────────────
+   ACHIEVEMENTS — featured highlight cards
+   ──────────────────────────────────────────── */
+.ach-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.ach-featured-card {
+  background: linear-gradient(135deg, var(--accent) 0%, #a85f28 100%);
+  border-radius: 20px;
+  padding: 22px 26px;
+  box-shadow: 0 12px 32px rgba(166, 92, 32, 0.28);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ach-featured-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(166, 92, 32, 0.34);
+}
+
+.ach-featured-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.ach-featured-text {
+  font-size: 14px;
+  color: rgba(255, 248, 238, 0.92);
+  line-height: 1.6;
+}
+
+.ach-featured-text strong {
+  color: #fff;
+  font-weight: 700;
 }
 
 .ach-text {
@@ -1103,12 +1228,25 @@ section {
 /* ────────────────────────────────────────────
    RESPONSIVE
    ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nav-links           { display: none; }
+  .nav > .nav-resume   { display: none; }
+  .nav-hamburger       { display: flex; }
+}
+
+@media (min-width: 1025px) {
+  .nav-hamburger       { display: none; }
+  .nav-mobile-panel    { display: none; }
+}
+
 @media (max-width: 860px) {
   .hero-inner          { grid-template-columns: 1fr; }
   .hero-right          { display: none; }
   .bento-row           { grid-template-columns: 1fr; }
   .bento-row-2         { grid-template-columns: 1fr; }
   .about-details-grid  { grid-template-columns: 1fr; gap: 32px; }
+  .skills-card-wide    { grid-column: span 1; }
+  .ach-featured-grid   { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1116,6 +1254,8 @@ section {
   .nav                 { padding: 16px 24px; }
   .hero-name           { font-size: 48px; }
   .entry-card          { padding: 24px; }
-  .nav-resume          { display: none; }
   .skills-grid-v2      { grid-template-columns: 1fr; }
+  .entry-list-grid     { grid-template-columns: 1fr; }
+  .cert-grid           { grid-template-columns: 1fr; }
+  .projects-grid       { grid-template-columns: 1fr; }
 }
