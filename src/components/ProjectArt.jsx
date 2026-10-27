@@ -6,6 +6,17 @@ export default function ProjectArt({ name }) {
   const accent = "#c67c38";
 
   switch (name) {
+    case "FocusGeek":
+      return (
+        <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M18 26c11-4 22-2 32 5v47c-10-7-21-9-32-5z" fill={paper} stroke={stroke} strokeWidth="2.4" strokeLinejoin="round" />
+          <path d="M82 26c-11-4-22-2-32 5v47c10-7 21-9 32-5z" fill={cream} stroke={stroke} strokeWidth="2.4" strokeLinejoin="round" />
+          <path d="M50 31v47" stroke={stroke} strokeWidth="2.4" strokeLinecap="round" />
+          <path d="M26 39h15M26 48h12M59 39h15M59 48h12" stroke={accent} strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="72" cy="67" r="13" fill={paper} stroke={stroke} strokeWidth="2.4" />
+          <path d="M72 59v9l6 4" fill="none" stroke={accent} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
     case "DocIntel-AI":
       return (
         <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">

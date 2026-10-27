@@ -1,4 +1,4 @@
-import { FiCalendar, FiMapPin, FiBriefcase } from "react-icons/fi";
+import { FiCalendar, FiMapPin, FiBriefcase, FiExternalLink } from "react-icons/fi";
 import { DATA } from "../data";
 import { useReveal } from "../hooks";
 import SectionHead from "../components/SectionHead";
@@ -21,6 +21,16 @@ export default function Experience() {
             <ul className="exp-bullets">
               {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
             </ul>
+            {e.certificateUrl && (
+              <a
+                className="entry-certificate-link"
+                href={e.certificateUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View internship certificate <FiExternalLink aria-hidden="true" />
+              </a>
+            )}
           </div>
         ))}
       </div>

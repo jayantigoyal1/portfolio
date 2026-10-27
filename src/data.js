@@ -8,6 +8,9 @@ import certIEEEImg from "./assets/iee open source.png";
 import certMSCImg from "./assets/msc certificate.jpg";
 import certGDGCPImg from "./assets/GDG CP.png";
 import certSWOCImg from "./assets/SWOC.png";
+import certAlgoQueenImg from "./assets/algoqueen.png";
+import certAWSImg from "./assets/aws.png";
+import certLogitechImg from "./assets/logitech.png";
 
 export { heroImage };
 
@@ -32,6 +35,7 @@ export const DATA = {
       company: "Digitup Solutions",
       period: "Feb 2026 – Apr 2026",
       location: "Gurgaon, India",
+      certificateUrl: "https://drive.google.com/file/d/13puLakzeapzdBmF9iw3trkdMWFbSA4W_/view?usp=sharing",
       bullets: [
         "Researched AI automation for the ticketing system; labeled 1,000+ data samples for ML training.",
         "Architected an AI-based text-generation module producing customised problem statements via structured parameters.",
@@ -50,6 +54,15 @@ export const DATA = {
   ],
 
   projects: [
+    {
+      name: "FocusGeek",
+      tagline: "Plan, study, learn, test, and reflect in one calm workspace",
+      tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "AWS Lambda", "DynamoDB", "Amazon Bedrock", "Cognito", "S3"],
+      desc: "A responsive study-management platform for planning subjects and deadlines, learning from uploaded notes, generating quizzes, running Pomodoro sessions, and tracking exam readiness. It combines an Amazon Bedrock-powered study assistant with a serverless AWS backend.",
+      repo: "https://github.com/jayantigoyal1/FocusGeek",
+      demo: "https://focus-geek.vercel.app/",
+      tags: ["NEXT.JS", "AWS", "BEDROCK AI"],
+    },
     {
       name: "DocIntel-AI",
       tagline: "AI-powered document intelligence platform for classification, information extraction, and document Q&A",
@@ -97,11 +110,12 @@ export const DATA = {
   },
 
   achievements: [
-    { icon: "🏅", text: " Selected for **Amazon ML Summer School 2026** by Amazon", featured: true },
+    { icon: "🏆", text: "**ICPC AlgoQueen 2026** — Overall Rank 15 and Delhi State Rank 1", featured: true },
     { icon: "🎓", text: "Selected among **Top 100 students in India** for MSTEM Scholarship 2026 by Marvell Technology", featured: true },
+    { icon: "🏅", text: "Selected for **Amazon ML Summer School 2026** by Amazon" },
     { icon: "🏆", text: "Flipkart Grid 8.0 **Semi Finalist**" },
-    { icon: "🏅", text: "Selected for zonals of **Woemn Who Master hackathon** by Logitech and Aspire for Her" },
-    { icon: "💡", text: "**650+ problems solved** on LeetCode, CodeChef & Codeforces" },
+    { icon: "🏅", text: "Selected for zonals of **Women Who Master hackathon** by Logitech and Aspire for Her" },
+    { icon: "💡", text: "**700+ problems solved** on LeetCode, CodeChef & Codeforces" },
     { icon: "🎓", text: "Completed **McKinsey Forward Program 2026** by McKinsey & Company" },
     { icon: "🏆", text: "**3rd Place** (80+ teams) – Mobile App Dev Hackathon, IGDTUW" },
     { icon: "🥇", text: "**Ranked 1st** – MERN Stack Cohort, MSC Summer Bootcamp 2025" },
@@ -114,6 +128,12 @@ export const DATA = {
 
   certifications: [
     {
+      title: "ICPC AlgoQueen 2026",
+      subtitle: "Overall Rank 15 · Delhi State Rank 1",
+      url: "https://drive.google.com/file/d/1yAUOXCyFkPYJPr8SJV61tDGvi2yJXeUr/view?usp=sharing",
+      image: certAlgoQueenImg,
+    },
+    {
       title: "Machine Learning Specialization",
       subtitle: "DeepLearning.AI · Stanford Online · Coursera",
       image: certMLImg,
@@ -122,6 +142,16 @@ export const DATA = {
       title: "Oracle Cloud Infrastructure AI Foundations",
       subtitle: "Foundations Associate · Oracle · 2025",
       image: certOracleImg,
+    },
+    {
+      title: "Cloud Computing with AWS",
+      url: "https://drive.google.com/file/d/1rqyut90HUL759hmm7hmWhkSwTfKUnsu5/view?usp=sharing",
+      image: certAWSImg,
+    },
+    {
+      title: "Women Who Master Hackathon",
+      subtitle: "Zonal Selection · Logitech × Aspire For Her",
+      image: certLogitechImg,
     },
     {
       title: "M-STEM Scholarship",
